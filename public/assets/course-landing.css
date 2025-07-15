@@ -1,0 +1,511 @@
+/* =============================================== */
+/* COURSE LANDING ADDITIONAL STYLES                */
+/* =============================================== */
+
+/* Дополнительные анимации для лендинга */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Анимации для элементов */
+.hero-text {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.hero-image {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+}
+
+.course-badge {
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.course-meta {
+    animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.pricing-section {
+    animation: fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.module-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.module-item:nth-child(1) { animation-delay: 0.1s; }
+.module-item:nth-child(2) { animation-delay: 0.2s; }
+.module-item:nth-child(3) { animation-delay: 0.3s; }
+.module-item:nth-child(4) { animation-delay: 0.4s; }
+.module-item:nth-child(5) { animation-delay: 0.5s; }
+
+.benefit-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.benefit-item:nth-child(1) { animation-delay: 0.1s; }
+.benefit-item:nth-child(2) { animation-delay: 0.2s; }
+.benefit-item:nth-child(3) { animation-delay: 0.3s; }
+.benefit-item:nth-child(4) { animation-delay: 0.4s; }
+.benefit-item:nth-child(5) { animation-delay: 0.5s; }
+.benefit-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Дополнительные эффекты для кнопок */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Эффект свечения для цены */
+.price-amount {
+    position: relative;
+}
+
+.price-amount::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.price-paid:hover .price-amount::after {
+    opacity: 1;
+}
+
+/* Анимация для иконок */
+.benefit-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+.benefit-item:nth-child(1) .benefit-icon { animation-delay: 0s; }
+.benefit-item:nth-child(2) .benefit-icon { animation-delay: 0.5s; }
+.benefit-item:nth-child(3) .benefit-icon { animation-delay: 1s; }
+.benefit-item:nth-child(4) .benefit-icon { animation-delay: 1.5s; }
+.benefit-item:nth-child(5) .benefit-icon { animation-delay: 2s; }
+.benefit-item:nth-child(6) .benefit-icon { animation-delay: 2.5s; }
+
+/* Эффект пульсации для кнопки воспроизведения */
+.play-button {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Улучшенные стили для модулей и аккордеона */
+.module-item {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.module-item:hover {
+    background: #222;
+    border-color: var(--primary-accent-color);
+}
+
+.module-item.active {
+    background: #2a2a2a;
+    border-color: var(--primary-accent-color);
+    box-shadow: 0 8px 32px rgba(132, 115, 255, 0.2);
+}
+
+.module-title {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.module-lessons-count {
+    color: #cccccc !important;
+}
+
+.lesson-item {
+    background: #1f1f1f !important;
+    border: 1px solid #444 !important;
+    color: #ffffff;
+}
+
+.lesson-item:hover {
+    background: #2a2a2a !important;
+    border-color: #555 !important;
+}
+
+.lesson-title {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.lesson-duration {
+    color: #aaaaaa !important;
+}
+
+.lesson-number {
+    background: rgba(132, 115, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.status-dot {
+    background: #666 !important;
+}
+
+/* Анимация для аккордеона */
+.lessons-list {
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.module-arrow {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Дополнительные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .hero-content {
+        gap: 40px;
+    }
+    
+    .course-meta {
+        gap: 12px;
+    }
+    
+    .meta-item {
+        min-width: 140px;
+        padding: 12px 16px;
+    }
+    
+    .benefits-grid {
+        gap: 20px;
+    }
+    
+    .benefit-item {
+        padding: 24px;
+    }
+    
+    .lessons-list {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-title {
+        font-size: 1.8rem;
+    }
+    
+    .course-description {
+        font-size: 1rem;
+    }
+    
+    .meta-item {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .pricing-section {
+        padding: 20px;
+    }
+    
+    .price-amount {
+        font-size: 2rem;
+    }
+    
+    .btn-large {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+    
+    .btn-icon {
+        font-size: 16px;
+    }
+    
+    .module-item {
+        padding: 16px;
+    }
+    
+    .module-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Темная тема для лендинга */
+@media (prefers-color-scheme: dark) {
+    .course-landing {
+        background: var(--background-color);
+    }
+    
+    .course-program {
+        background: var(--container-color);
+    }
+    
+    .course-benefits {
+        background: var(--background-color);
+    }
+}
+
+/* Дополнительные эффекты при скролле */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для загрузки */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Улучшенные стили для фокуса */
+.btn:focus,
+.meta-item:focus,
+.module-item:focus {
+    outline: 2px solid var(--primary-accent-color);
+    outline-offset: 2px;
+}
+
+/* Стили для печати */
+@media print {
+    .course-landing {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .hero-section,
+    .final-cta {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .btn {
+        display: none !important;
+    }
+}
+
+/* Дополнительные улучшения для лендинга */
+.course-landing {
+    min-height: 100vh;
+}
+
+/* Улучшенные градиенты */
+.hero-gradient {
+    background: linear-gradient(135deg, 
+        #8473FF 0%, 
+        #5B4B8A 25%, 
+        #3A2E5A 50%, 
+        #2A1F3A 75%, 
+        #1A1428 100%);
+}
+
+.cta-gradient {
+    background: linear-gradient(135deg, 
+        #1A1428 0%, 
+        #2A1F3A 25%, 
+        #3A2E5A 50%, 
+        #5B4B8A 75%, 
+        #8473FF 100%);
+}
+
+/* Улучшенные тени */
+.course-cover-wrapper {
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.benefit-item {
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.benefit-item:hover {
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 1px var(--primary-accent-color);
+}
+
+/* Улучшенные кнопки */
+.btn-primary {
+    background: linear-gradient(135deg, 
+        var(--primary-accent-color) 0%, 
+        var(--primary-accent-hover-color) 50%, 
+        var(--primary-accent-color) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Улучшенные мета-элементы */
+.meta-item {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Улучшенные модули */
+.module-item {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Улучшенные уроки */
+.lesson-item {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Эффект свечения для активных элементов */
+.module-item:hover .module-number,
+.benefit-item:hover .benefit-icon {
+    filter: drop-shadow(0 0 10px var(--primary-accent-color));
+}
+
+/* Улучшенная типографика */
+.course-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Улучшенные переходы */
+* {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Специальные эффекты для премиум-курсов */
+.course-badge.premium {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #000;
+    font-weight: 600;
+}
+
+.course-badge.premium .badge-icon {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(180deg);
+    }
+}
+
+/* Улучшенная доступность */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Улучшенные стили для высокого DPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .course-cover {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+} 

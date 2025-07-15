@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Если это не существующий файл или папка
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Всё остальное — на public/index.php
+RewriteRule ^(.*)$ public/index.php [L,QSA]
